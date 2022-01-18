@@ -52,6 +52,7 @@ function handleKey(event) {
   // Hint: event gir deg tilgang til eventet
   // Her kan du bruke event til å sjekke hviken knapp på
   // tastaturen brukeren har trykket på
+
   if(event.keyCode === 49) {
     keyPressed = 1;
     displayNumber.innerHTML = keyPressed;
@@ -100,6 +101,8 @@ function handleKey(event) {
     keyPressed = 0;
     displayNumber.innerHTML = keyPressed;
   }
+
+
 }
 
 
@@ -108,10 +111,7 @@ function handleButtonClick(event) {
   // Hint: event gir deg tilgang til eventet
   // Her kan du bruke event til å sjekke hviken button
   // brukeren trykket på
-  if(event.keyCode === 49) {
-    keyPressed = 1;
-    displayNumber.innerHTML = keyPressed;
-  }
+  
 }
 
 // TODO: Lytt til nødvendig "events" på HTML-elementer
