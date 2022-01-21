@@ -316,162 +316,167 @@ try {
 
   /// Method definitions (bonus) ///
 
-  /*
-	(function UseMethodDefinitions() {
-		// Use method properties to remove unnecessary syntax. DO NOT use arrow functions.
-		let obj = {
-			add: function (a, b) { return a + b; },
-			subtract: function (a, b) { return a - b; }
-		}
+  (function UseMethodDefinitions() {
+    // Use method properties to remove unnecessary syntax. DO NOT use arrow functions.
+    let obj = {
+      add(a, b) {
+        return a + b;
+      },
+      subtract(a, b) {
+        return a - b;
+      }
+    };
 
-		// Don't make changes below this line	
-		
-		expect(obj.add(5, 2)).toBe(7);
-		expect(obj.subtract(5, 2)).toBe(3);
-		
-		solvedBonus++;
-	})();
-	*/
+    // Don't make changes below this line
+
+    expect(obj.add(5, 2)).toBe(7);
+    expect(obj.subtract(5, 2)).toBe(3);
+
+    solvedBonus++;
+  })();
 
   /// class (bonus) ///
 
-  /*
-	(function UseClass() {
-		// Let Multiplier be a class with the appropriate methods to succeed.
-		let Multiplier = 'class';
+  // (function UseClass() {
+  //   // Let Multiplier be a class with the appropriate methods to succeed.
+  //   let Multiplier = class(x) {
+  //     multiply(y) {
+  //       return x * this.y;
+  //     }
+  //   };
 
-		// Don't make changes below this line	
-		
-		let m = new Multiplier(2);
-		
-		expect(m.multiply(3)).toBe(6);
-		
-		solvedBonus++;
-	})();
-	*/
+  //   // Don't make changes below this line
+
+  //   let m = new Multiplier(2);
+
+  //   expect(m.multiply(3)).toBe(6);
+
+  //   solvedBonus++;
+  // })();
 
   /// Template strings (bonus) ///
 
-  /*
-	(function UseTemplateStrings2() {
-		// Rewrite the line below to use a template string.
-		const text = 'line 1line 2';
+  (function UseTemplateStrings2() {
+    // Rewrite the line below to use a template string.
+    const text = `line 1\nline 2`;
 
-		// Don't make changes below this line	
-		
-		expect(text).toBe('line 1\nline 2');
-		
-		solvedBonus++;
-	})();
-	*/
+    // Don't make changes below this line
+
+    expect(text).toBe("line 1\nline 2");
+
+    solvedBonus++;
+  })();
 
   /// Arrow functions (bonus) ///
 
-  /*
-	(function UseArrow3() {
-		// Rewrite all functions as arrow functions. Use as minimal syntax as possible.
-		let one = function () { return 1; };
-		let two = function (x) { return x + x; };
-		let three = function (x, y) { return x + y; };
-		let four = function (x, y) {
-			let result = 0;
-			for (let i = x; i < y; i++)
-				result += i;
-			return result;
-			};
+  (function UseArrow3() {
+    // Rewrite all functions as arrow functions. Use as minimal syntax as possible.
+    let one = () => {
+      return 1;
+    };
+    let two = (x) => {
+      return x + x;
+    };
+    let three = (x, y) => {
+      return x + y;
+    };
+    let four = (x, y) => {
+      let result = 0;
+      for (let i = x; i < y; i++) result += i;
+      return result;
+    };
 
-		// Don't make changes below this line	
-		
-		expect(one()).toBe(1);
-		expect(two(1)).toBe(2);
-		expect(three(1,2)).toBe(3);
-		expect(four(3, 6)).toBe(12);
-		
-		solvedBonus++;
-	})();
-	*/
+    // Don't make changes below this line
+
+    expect(one()).toBe(1);
+    expect(two(1)).toBe(2);
+    expect(three(1, 2)).toBe(3);
+    expect(four(3, 6)).toBe(12);
+
+    solvedBonus++;
+  })();
 
   /// Destructuring (bonus) ///
 
-  /*
-	(function UseObjectDestructuring2() {
-		let obj = {
-			name: 'Oslo',
-			age: 985,
-			add: (x, y) => x + y
-		}
-		
-		// Use object destructuring to change the 3 statements below into 1 statement.
-		let a = obj.name;
-		let b = obj.age;
-		let c = obj.add;
+  (function UseObjectDestructuring2() {
+    let obj = {
+      name: "Oslo",
+      age: 985,
+      add: (x, y) => x + y
+    };
 
-		// Don't make changes below this line	
-		
-		expect(a).toBe('Oslo');
-		expect(b).toBe(985);
-		expect(c(1, 2)).toBe(3);
-		
-		solvedBonus++;
-	})();
-	*/
+    // Use object destructuring to change the 3 statements below into 1 statement.
+    // let a = obj.name;
+    // let b = obj.age;
+    // let c = obj.add;
+    let { name: a, age: b, add: c } = obj;
 
-  /*
-	(function UseFailSoftDestructuring() {
-		const arr = [1, 2];
-		
+    // Don't make changes below this line
+
+    expect(a).toBe("Oslo");
+    expect(b).toBe(985);
+    expect(c(1, 2)).toBe(3);
+
+    solvedBonus++;
+  })();
+
+  (function UseFailSoftDestructuring() {
+    const arr = [1, 2];
+
     // change the left side (before =) below to let the tests succeed.
-		let [a, b] = arr;
+    let [a, b, c = 3, d] = arr;
 
-		// Don't make changes below this line	
-		
-		expect(a).toBe(1);
-		expect(b).toBe(2);
-		expect(c).toBe(3);
-		expect(d).toBe(undefined);
+    // Don't make changes below this line
 
-		solvedBonus++;
-	})();
-	*/
+    expect(a).toBe(1);
+    expect(b).toBe(2);
+    expect(c).toBe(3);
+    expect(d).toBe(undefined);
 
-  /*
-	(function UseNestedDestructuring() {
-		let obj = {
-			add: (x, y) => x + y,
-			city: { name: 'Oslo', age: 985 },
-			arr: [1, 2, 3]
-			};
-		
-		// Use destructuring to change the 3 statements below into 1 statement.
-		let a = obj.add;
-		let b = obj.city.name;
-		let c = obj.arr.slice(1);
+    solvedBonus++;
+  })();
 
-		// Don't make changes below this line	
-		
-		expect(a(1, 2)).toBe(3);
-		expect(b).toBe('Oslo');
-		expect(c).toEqual([2, 3]);
-		
-		solvedBonus++;
-	})();
-	*/
+  // (function UseNestedDestructuring() {
+  //   let obj = {
+  //     add: (x, y) => x + y,
+  //     city: { name: "Oslo", age: 985 },
+  //     arr: [1, 2, 3]
+  //   };
 
-  /*
+  //   // Use destructuring to change the 3 statements below into 1 statement.
+  //   // let a = obj.add;
+  //   // let b = obj.city.name;
+  //   // let c = obj.arr.slice(1);
+  //   let {
+  //     add: a,
+  //     city: { name },
+  //     arr: c
+  //   } = obj;
+  //   let [, ...c1] = c;
+  //   console.log(c1);
+
+  //   // Don't make changes below this line
+
+  //   expect(a(1, 2)).toBe(3);
+  //   expect(b).toBe("Oslo");
+  //   expect(c).toEqual([2, 3]);
+
+  //   solvedBonus++;
+  // })();
+
   (function UseDestructuring() {
     const arr = [1, 2, 3, 4];
 
     // Use spread & destructuring in the following 2 lines to move the first entry to the last.
-    const [first, rest] = arr;
-    const newArr = [rest, first];
+    const [first, ...last] = arr;
+    const newArr = [...last, first];
 
     // Don't make changes below this line
 
     expect(newArr).toEqual([2, 3, 4, 1]);
 
     solvedBonus++;
-	})();
-	*/
+  })();
 
   /// Iterable (bonus) ///
 
