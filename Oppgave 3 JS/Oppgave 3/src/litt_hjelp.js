@@ -1,5 +1,3 @@
-import "./styles.css";
-
 // TODO: Sett startverdien for de ulike tellerene
 let wordCounter = 0;
 let positionCounter = 0;
@@ -28,7 +26,7 @@ const button = document.querySelector('button[type="submit"]');
 
 const setWord = () => {
   // TODO: Skriv ut ordet som brukeren skal skrive eller en medling om at det ikke er flere ord igjen
-  word.innerHTML = "asdasd";
+  word.innerHTML = words[0];
 };
 
 const changeWord = () => {
