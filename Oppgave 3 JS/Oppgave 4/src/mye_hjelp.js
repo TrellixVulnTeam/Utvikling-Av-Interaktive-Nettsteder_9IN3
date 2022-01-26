@@ -2,6 +2,7 @@ import "./styles.css";
 
 // TODO: Bruk getElementById til å hente HTML med #id
 // TODO: Bruk querySelector til å hente knappen
+
 const numbersUl = "";
 const guessUl = "";
 const button = "";
