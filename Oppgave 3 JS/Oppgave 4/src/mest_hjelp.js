@@ -24,7 +24,7 @@ const checkNumberSeq = () => {
 const addInputUI = () => {
   // TODO: Bruk for-of (eller vanlig for-løkke) og guessUl til å lage li-elementer med input elementer for å kunne skrive inn hva som skal sorteres
   for (let element of numbers) {
-    const li = document.createElement("input");
+    const li = `<li> ${element}</li>`;
     guessUl.innerHTML += li;
   }
   console.log(guessUl);

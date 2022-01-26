@@ -1,0 +1,73 @@
+:root {
+  /* --box-size: var(--box-size); */
+  --box-size: 100px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* Skal være grid */
+/* Grid skal ha 5 kolonner og maks var(--box-size) */
+/* Mellomrom skal være 25px */
+.score {
+  padding: 1rem 0.3rem;
+}
+
+.score.correct {
+  border: 3px solid aquamarine;
+}
+
+.score.fail {
+  border: 3px solid tomato;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(5, var(--box-size));
+  gap: 25px;
+  width: 100%;
+}
+
+/* Bruk variablene over til å sette høyde og bredde */
+.box {
+  border: 1px solid #a9a9a9;
+  background: none;
+  width: var(--box-size);
+  height: var(--box-size);
+}
+
+.box.selected,
+.box.success {
+  background-color: green;
+}
+
+.box.preview {
+  background-color: aquamarine;
+  border: 3px solid rgb(19, 102, 74);
+  box-shadow: 0 3px 6px 1px rgba(19, 102, 74, 0.3);
+}
+
+.box.off {
+  background-color: transparent;
+  border: 1px solid #a9a9a9;
+  box-shadow: none;
+}
+
+.box.fail {
+  background-color: tomato;
+}
+
+#correct
+
+/* Disabled knapp skal ha en cursor som viser at vi ikke kan trykke */
+.squareSomHarDisabledMode {
+}
+
+.square.color {
+  background-color: aquamarine;
+}
+
+.square.color-opeque {
+  background-color: transparent;
+}
