@@ -1,0 +1,1 @@
+Denne oppgaven har jeg jobbet sammen med Stig Ark
