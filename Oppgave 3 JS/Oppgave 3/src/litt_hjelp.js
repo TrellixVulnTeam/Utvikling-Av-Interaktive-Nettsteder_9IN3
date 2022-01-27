@@ -17,6 +17,7 @@ const words = [
   "Brook",
   "Jinbe"
 ];
+// IKKE FERDIG
 
 // TODO: Hent ut HTML #id og knappen
 const word = document.getElementById("word");
