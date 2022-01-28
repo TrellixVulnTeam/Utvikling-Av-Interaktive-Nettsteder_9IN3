@@ -72,7 +72,7 @@ const list = document.getElementById("list");
 const removeListBtn = document.getElementById("remove-li");
 
 const removeList = () => {
-    list.innerHTML = null;
+    list.removeChild(listNodes[0])
 }
 
 removeListBtn.addEventListener("click", removeList);
@@ -104,14 +104,12 @@ const colorBtn = document.getElementById("color");
 
 const addBorder = () => {
     Array.from(ulParentChildren).forEach((li, index) => {
-        console.log(li);
-        li.style = "border: 1px solid blue; margin-bottom: 10px; padding: 5px";
-        
-        // if((index + 1) % 2 === 0) {
-        //     li.style = "border: 1px solid pink; margin-bottom: 10px; padding: 5px;";
-        // } else {
-        //     li.style = "border: 1px solid green; margin-bottom: 10px; padding: 5px;";
-        // }
+        console.log(li);        
+        if((index + 1) % 2 === 0) {
+            li.style = "border: 1px solid pink; margin-bottom: 10px; padding: 5px;";
+        } else {
+            li.style = "border: 1px solid green; margin-bottom: 10px; padding: 5px;";
+        }
     })
 }
 
