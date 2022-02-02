@@ -299,7 +299,7 @@ try {
     // - Do NOT use Object.assign()
     // - Do use object spread properties
     // - Think about the order!
-    let result = { a: obj1.a, b: obj2.b, c: obj3.c, d: obj2.d, e: obj2.e };
+    let result = { ...obj1, ...obj3, ...obj2 };
 
     // Don't make changes below this line
 
