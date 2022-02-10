@@ -1,0 +1,16 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+// 5. Styling
+// Add (className='flex') to the <section> in <Wrapper> 
+// to flex the items on <Wrapper>. Add necessary styling in the 
+// styles.scss
+
+.flex {
+  display: flex;
+  color: blue;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+}
