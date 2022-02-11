@@ -16,67 +16,40 @@ function Header() {
 function Form() {
   return (
     <form>
-      <label for="title">Title</label>
+      <label htmlFor="title">Title</label>
       <input type="text" id="title" />
 
-      <label for="content">Content</label>
+      <label htmlFor="content">Content</label>
       <textarea id="content" rows="6"></textarea>
 
-      <input type="submit" value="Add" id="add_btn" />
+      <button type="submit">Add</button>
     </form>
   );
 }
 
-function Todos() {
+function TodoList() {
   return (
     <>
       <h2 id="todo_header">My To do's</h2>
       <section id="todo_grid">
-        <article>
-          <h3>To do title</h3>
-          <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
-          <button value="Complete" id="complete_btn">
-            Complete
-          </button>
-        </article>
-        <article>
-          <h3>To do title</h3>
-          <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
-          <button value="Complete" id="complete_btn">
-            Complete
-          </button>
-        </article>
-        <article>
-          <h3>To do title</h3>
-          <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
-          <button value="Complete" id="complete_btn">
-            Complete
-          </button>
-        </article>
-        <article>
-          <h3>To do title</h3>
-          <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
-          <button value="Complete" id="complete_btn">
-            Complete
-          </button>
-        </article>
-        <article>
-          <h3>To do title</h3>
-          <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
-          <button value="Complete" id="complete_btn">
-            Complete
-          </button>
-        </article>
-        <article>
-          <h3>To do title</h3>
-          <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
-          <button type="submit" value="Complete" id="complete_btn">
-            Complete
-          </button>
-        </article>
+        <SingleTodo />
       </section>
     </>
   );
+}
+
+function SingleTodo() {
+  return (
+    <article>
+      <h3>To do title</h3>
+      <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
+      <Button />
+    </article>
+  );
+}
+
+function Button() {
+  return <button id="complete_btn">Complete</button>;
 }
 
 export default function App() {
@@ -85,7 +58,7 @@ export default function App() {
       <Header />
       <main>
         <Form />
-        <Todos />
+        <TodoList />
       </main>
     </>
   );

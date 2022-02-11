@@ -41,7 +41,8 @@ label {
 }
 
 input,
-textarea {
+textarea,
+button {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -52,7 +53,7 @@ textarea {
   background-color: #fcfcfc;
 }
 
-#add_btn {
+button {
   width: 100px;
   color: white;
   background-color: #5ad2c1;
