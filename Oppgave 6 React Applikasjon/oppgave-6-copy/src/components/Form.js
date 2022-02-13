@@ -10,7 +10,7 @@ export default function Form({ setTodos }) {
   const [content, setContent] = useState("");
 
   // Genererer random Id
-  const createId = () => Math.floor(Math.random(0, 1) * 1000);
+  // const createId = () => Math.floor(Math.random(0, 1) * 1000);
 
   // Funksjonen trigges når vi skriver i input name="title" i Input komponenten
   const handleTitleChange = (event) => {
