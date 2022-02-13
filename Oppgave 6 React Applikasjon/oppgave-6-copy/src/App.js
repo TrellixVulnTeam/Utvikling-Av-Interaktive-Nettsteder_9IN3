@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import TodoList from "./components/TodoList";
 import { useState } from "react";
 
+// Jobbet med Stig
 export default function App() {
   const [todos, setTodos] = useState([]);
   console.log(todos);
