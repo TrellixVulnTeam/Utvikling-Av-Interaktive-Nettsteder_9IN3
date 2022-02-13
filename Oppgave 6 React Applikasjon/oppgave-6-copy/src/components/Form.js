@@ -1,5 +1,6 @@
 import Input from "./Input";
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 
 export default function Form({ setTodos }) {
   // Lagrer endringene i input name="title" via useState
@@ -26,7 +27,9 @@ export default function Form({ setTodos }) {
   // Funksjon som legger til en ny todo i lista setTodos
   const onSubmit = (event) => {
     event.preventDefault();
-    const id = createId();
+    // const id = createId();
+    // Installerte uuid og brukte det for å lage en ny id
+    const id = uuid();
     setTodos((prev) => [...prev, { id, title, content }]);
   };
 
