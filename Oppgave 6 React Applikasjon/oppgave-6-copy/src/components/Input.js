@@ -1,13 +1,17 @@
-export default function Input() {
+export default function Input({ label, type, name, id, onChange, value }) {
   return (
     <>
-      <label htmlFor="title">Title</label>
-      <input type="text" id="title" />
-
-      <label htmlFor="content">Content</label>
-      <textarea id="content" rows="6"></textarea>
-
-      <button type="submit">Add</button>
+      <label htmlFor={id}>
+        {label}
+        <input
+          type={type}
+          name={name}
+          id={id}
+          onChange={onChange}
+          placeholder={label}
+          value={value}
+        />
+      </label>
     </>
   );
 }

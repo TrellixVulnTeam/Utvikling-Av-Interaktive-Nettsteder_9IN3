@@ -1,9 +1,15 @@
-export default function Todo() {
+export default function Todo({ title, content, removeTodo, id }) {
   return (
     <article>
-      <h3>To do title</h3>
-      <p>I'm a baby sriracha hot chicken mixtape pabst organic air...</p>
-      <button id="complete_btn">Complete</button>
+      <h3>{title}</h3>
+      <p>{content}</p>
+      <button
+        className="complete_btn"
+        type="button"
+        onClick={() => removeTodo(id)}
+      >
+        Complete
+      </button>
     </article>
   );
 }

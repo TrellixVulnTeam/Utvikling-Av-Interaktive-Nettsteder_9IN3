@@ -1,0 +1,14 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: blue;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=styles.css.map */
