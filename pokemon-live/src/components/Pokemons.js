@@ -1,19 +1,15 @@
 import Pokemon from './Pokemon'
 
-export default function Pokemons() {
-  const pokemons = [
-    { id: 1, name: 'Bulbasaur' },
-    { id: 2, name: 'Ivysaur' },
-    { id: 3, name: 'Venosaur' },
-  ]
-
+export default function Pokemons({ pokemons }) {
+  
+  
   return (
     <section>
       <h1>Liste med pokemons</h1>
       <ul>
-        {pokemons.map((pokemon) => (
-          <li key={pokemon.id}>
-            <Pokemon id={pokemon.id} name={pokemon.name} />
+        {pokemons?.map((pokemon) => (
+          <li key={pokemon.name}>
+            <Pokemon url={pokemon.url} name={pokemon.name} />
           </li>
         ))}
       </ul>
