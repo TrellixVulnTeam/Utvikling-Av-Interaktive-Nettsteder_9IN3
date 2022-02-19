@@ -23,7 +23,7 @@ export default function App() {
 
   return (
     <main className="mx-auto max-w-sm mt-6 border-2 p-6">
-      <Posts  />
+      {/* <Posts  /> */}
       <Pokemons pokemons={pokemons} />
       <button type="button" onClick={getPokemons}>
         Hent Pokemons
