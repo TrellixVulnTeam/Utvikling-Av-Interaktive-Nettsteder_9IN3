@@ -31,13 +31,58 @@ function App() {
     },
   ]
 
-  const [current, setCurrent] = useState('')
-  // console.log(content)
+  // Getting title from this website
+  // https://jsonplaceholder.typicode.com/posts
 
+  // useState to set up content
+  const [post, setPost] = useState()
+  // function to get the post from https://jsonplaceholder.typicode.com/posts
+  const getPost = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const data = await response.json()
+    setPost(data)
+    console.log(JSON.stringify(post))
+  }
+
+  // useState to storage current content
+  const [current, setCurrent] = useState(contentList[0])
   // onClick for å trigge noe skal skj
   const handleClick = (event) => {
     event.preventDefault()
     setCurrent(contentList[event.currentTarget.id])
+    // if (event.currentTarget.id == 0) {
+    //   console.log('Du er på side med design')
+    // } else if (event.currentTarget.id == 1) {
+    //   console.log('Du er på side med programmering')
+    // } else if (event.currentTarget.id == 2) {
+    //   console.log('Du er på sypport siden')
+    // }
+    switch (event.currentTarget.id) {
+      case '0':
+        console.log('Design')
+        // console.log(document.getElementById(0))
+        document.getElementById(event.currentTarget.id).style.backgroundColor =
+          'pink'
+        document.getElementById(1).style.backgroundColor = ''
+        document.getElementById(2).style.backgroundColor = ''
+        break
+      case '1':
+        console.log('Programming')
+        document.getElementById(event.currentTarget.id).style.backgroundColor =
+          'pink'
+        document.getElementById(0).style.backgroundColor = ''
+        document.getElementById(2).style.backgroundColor = ''
+        break
+      case '2':
+        console.log('Support')
+        document.getElementById(event.currentTarget.id).style.backgroundColor =
+          'pink'
+        document.getElementById(1).style.backgroundColor = ''
+        document.getElementById(0).style.backgroundColor = ''
+        break
+      default:
+        break
+    }
   }
 
   return (
