@@ -51,6 +51,7 @@ export default function App({ status }) {
         />
         <button type="submit">Add Todo</button>
       </form>
+
       <TodoList todos={todos} status={status} removeTodo={removeTodo} />
     </>
   )
