@@ -15,7 +15,8 @@ h1,
 h2,
 h3,
 li,
-a {
+a,
+textarea {
   margin: 0;
   padding: 0;
 }
@@ -49,7 +50,7 @@ nav {
 nav ul {
   list-style-type: none;
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
   border: 1px solid #333;
   padding: 1rem;
 }
@@ -72,5 +73,51 @@ aside button {
 }
 
 /* TODO: Style i henhold til design.png som ligger i mappen public */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "header header header"
+  "main main aside"
+  "footer footer footer"
+  ;
+
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  padding: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 2rem 0;
+  background-color: lightgrey;
+}
+
+form button {
+  width: 25%;
+  border: 1px solid black;
+  background-color: white;
+}
+
+aside {
+  grid-area: aside;
+  padding: 2rem;
+}
+
+footer {
+  grid-area: footer;
+  padding: 2rem;
+}
+
+
 
 /* TODO: Legg til breakpoint (media query) på 768px. Velg selv hvordan designet skal se ut på mobil */
