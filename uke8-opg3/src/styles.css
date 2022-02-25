@@ -16,7 +16,8 @@ h2,
 h3,
 li,
 a,
-textarea {
+textarea,
+button {
   margin: 0;
   padding: 0;
 }
