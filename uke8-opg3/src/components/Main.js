@@ -6,29 +6,25 @@ export default function Main() {
   const [comments, setComments] = useState([])
   const [text, setText] = useState('')
 
+  const handleText = (e) => {
+    setText(e.currentTarget.value)
+    // console.log(e.currentTarget.value)
+  }
+
   const handleSubmit = (event) => {
+    console.log(comments)
+
     event.preventDefault()
     const id = uuid()
 
-    if (comments === '') {
+    if (text === '') {
       alert('Skriv noe i kommentarfeltet før du trykker send')
     } else {
-      setComments((prev) => [...prev], { id, comments })
+      setComments((prev) => [...prev, { id, text }])
       setText('')
     }
   }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   const id = uuid()
-
-  //   if (text === '') {
-  //     alert('Skrive noe i inputfeltet')
-  //   } else {
-  //     setTodos((prev) => [...prev, { id, text, status }])
-  //     setText('')
-  //   }
-  // }
   return (
     <main>
       <h1>Overskrift</h1>
@@ -40,10 +36,16 @@ export default function Main() {
         pickled austin readymade pinterest tumeric aesthetic viral keffiyeh
         quinoa venmo distillery tousled.
       </p>
-      <form method="POST">
+      <form onSubmit={handleSubmit}>
         <h2>Legg igjen en kommentar</h2>
         <label htmlFor="comment">Kommentar </label>
-        <textarea id="comment" value={text} cols={15} rows={5} />
+        <textarea
+          id="comment"
+          onChange={handleText}
+          value={text}
+          cols={15}
+          rows={5}
+        />
         <button type="submit">Send</button>
       </form>
     </main>
