@@ -1,5 +1,6 @@
 import './styles.css'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 function App() {
   // Liste over bilde og info
@@ -45,23 +46,15 @@ function App() {
     }
   }
 
-  // Liste over farge stiling
-  // const filterColor = [
-  //   {
-  //     color:
-  //       'linear-gradient(to right, rgba(0, 224, 255, 0.5), rgba(0, 133, 255, 0.5))',
-  //   },
-  // ]
-
   // useState for å lagre hvilken farge filteret skal være
   const [currentFilter, setCurrentFilter] = useState(
     'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))'
   )
 
-  // useState
+  // useState for å sette farge filter
   const [activeColor, setActiveColor] = useState('')
 
-  // handleChangeFilter
+  // handleChangeFilter funksjon som setter hvilke filter som skal vises
   const handleChangeFilter = (event) => {
     event.preventDefault()
     // console.log('trykket', event.currentTarget.value)
@@ -86,7 +79,7 @@ function App() {
         break
       case 'reset':
         setCurrentFilter(
-          'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5))'
+          'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))'
         )
         setActiveColor(event.target.value)
         break
@@ -95,9 +88,20 @@ function App() {
     }
   }
 
+  const [hover, setHover] = useState('false')
+
+  const handleMouseIn = () => {
+    setHover(false)
+  }
+
+  const handleMouseOut = () => {
+    setHover(true)
+  }
+
   return (
     <main>
       <h3>PICTURES FROM SUMMER 2020</h3>
+      {/* Kontainer for bilde */}
       <div className="parent-container">
         <div
           className="img-container"
@@ -106,8 +110,19 @@ function App() {
           }}
         />
 
+        {/* Boks med tooltip */}
+        <div className="tooltip" hidden={hover}>
+          Use to this filter
+        </div>
+
+        {/* Knapper som endrer filter farge på bilde */}
         <div className="color-changer">
-          <button
+          <motion.button
+            whileHover={{ scale: 0.6 }}
+            onMouseOver={handleMouseIn}
+            onFocus={handleMouseIn}
+            onMouseOut={handleMouseOut}
+            onBlur={handleMouseOut}
             onClick={handleChangeFilter}
             type="button"
             className={
@@ -117,7 +132,12 @@ function App() {
             }
             value="blue"
           />
-          <button
+          <motion.button
+            whileHover={{ scale: 0.6 }}
+            onMouseOver={handleMouseIn}
+            onFocus={handleMouseIn}
+            onMouseOut={handleMouseOut}
+            onBlur={handleMouseOut}
             onClick={handleChangeFilter}
             type="button"
             className={
@@ -127,7 +147,12 @@ function App() {
             }
             value="red"
           />
-          <button
+          <motion.button
+            whileHover={{ scale: 0.6 }}
+            onMouseOver={handleMouseIn}
+            onFocus={handleMouseIn}
+            onMouseOut={handleMouseOut}
+            onBlur={handleMouseOut}
             onClick={handleChangeFilter}
             type="button"
             className={
@@ -137,7 +162,12 @@ function App() {
             }
             value="green"
           />
-          <button
+          <motion.button
+            whileHover={{ scale: 0.6 }}
+            onMouseOver={handleMouseIn}
+            onFocus={handleMouseIn}
+            onMouseOut={handleMouseOut}
+            onBlur={handleMouseOut}
             onClick={handleChangeFilter}
             type="button"
             className={
