@@ -13,7 +13,9 @@ main {
 
 img {
   width: 100%;
+  height: 500px;
 }
+
 
 h3 {
   padding: 1rem 0;
@@ -23,8 +25,16 @@ p {
   padding: 1rem 0;
 }
 
-.img-holder {
+.parent-container {
+  height: 500px;
+  width: 100%;
   position: relative;
+}
+
+.img-container {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
 }
 
 .color-changer {
@@ -33,28 +43,45 @@ p {
   gap: .5rem;
   float: right;
   position: absolute;
-  left: 870px;
-  top: 550px;
+  bottom: -10px;
+  right: -10px;
   background-color: white;
   padding: .5rem 1rem;
+  border-radius: .3rem;
 }
 
 .color-btn {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
   border-radius: 50%;
+  border: none;
 }
 
-.color-blue {
+.active-color-btn {
+  border: 5px solid white;
+}
+
+.inactive-color-btn {
+  border: none;
+}
+
+.blue {
   background-color: #1979ee;
 }
 
-.color-red {
+.red {
   background-color: #f64e4e;
+
 }
 
-.color-green {
+.green {
   background-color: #36b46a;
+
+}
+
+.reset {
+  background-color: black;
 }
 
 button {
@@ -63,6 +90,7 @@ button {
   margin: 1rem .5rem 0 0 ;
   font-size: 1.2rem;
   font-weight: 400;
+  border-radius: .3rem;
 }
 
 .active-button {
