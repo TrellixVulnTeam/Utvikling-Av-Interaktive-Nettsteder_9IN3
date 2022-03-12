@@ -29,7 +29,7 @@ function Movies() {
     const getActorsData = async () => {
       const actors = await getActors()
       setActors(actors)
-      console.log(JSON.stringify(actors))
+      // console.log(JSON.stringify(actors))
     }
     // Kaller på getActorsData funksjonen og tar med en .catch
     // for å fange opp eventuelle feil
@@ -54,7 +54,7 @@ function Movies() {
         <Movie key={movie.slug} title={movie.title} />
       ))}
       {actors?.map((actor) => (
-        <Movie key={actor.slug} actor={actor.title} />
+        <Movie key={actor.slug} actor={actor.fullname} />
       ))}
     </ul>
   )

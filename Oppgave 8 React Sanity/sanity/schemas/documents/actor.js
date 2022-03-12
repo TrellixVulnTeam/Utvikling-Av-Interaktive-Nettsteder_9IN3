@@ -5,7 +5,7 @@ const actor = {
   fields: [
     {
       title: "Skuespiller",
-      name: "title",
+      name: "fullname",
       type: "string",
       description: "Navnet på skuespilleren",
     },
@@ -16,7 +16,7 @@ const actor = {
       description: "Dette er den unike url-en",
       validation: (Rule) => Rule.required(),
       options: {
-        source: "title",
+        source: "fullname",
         maxLength: 96,
       },
     },

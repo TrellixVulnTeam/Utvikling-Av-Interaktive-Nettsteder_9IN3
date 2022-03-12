@@ -3,10 +3,11 @@ import client from './client'
 const movieFields = `
   title,
   "slug": slug.current,
+  "actor": actor->fullname
 `
 
 const actorFields = `
-  title,
+  fullname,
   "slug": slug.current,
 `
 
