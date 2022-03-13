@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import Movie from './Movie'
-import { getMovie, getMovies, getActor, getActors } from '../lib/movieService'
+import { getMovies, getActors, getMovieActor } from '../lib/movieService'
 
 function Movies() {
   const [movies, setMovies] = useState()
-  const [actors, setActors] = useState()
 
   useEffect(() => {
     // Funksjon for å hente movie data
@@ -18,31 +17,21 @@ function Movies() {
     // for å fange opp eventuelle feil.
     getMoviesData().catch((error) => console.log(error))
 
-    // Funksjon for å hente actors data
-    const getActorsData = async () => {
-      const actors = await getActors()
-      setActors(actors)
-      // console.log(JSON.stringify(actors))
+    // Funksjon for å hente filmer fra en gitt skuespiller
+    const getMovieActorData = async () => {
+      const movieActors = await getMovieActor('Robert Downey jr')
+      // console.log(JSON.stringify(movieActors))
     }
     // Kaller på getActorsData funksjonen og tar med en .catch
     // for å fange opp eventuelle feil
-    getActorsData().catch((error) => console.log(error))
+    getMovieActorData().catch((error) => console.log(error))
   }, [])
-
-  // const getActorsData = async () => {
-  //   const actors = await getActors()
-  //   setActors(actors)
-  //   console.log(JSON.stringify(actors))
-  // }
 
   return (
     <ul>
-      {movies?.map((movie) => (
-        <Movie key={movie.slug} title={movie.title} actor={movie.actor} />
+      {movies?.map((movie, index) => (
+        <Movie key={index} title={movie.title} actor={movie.actor} />
       ))}
-      {/* {actors?.map((actor) => (
-        <Movie key={actor.slug} actor={actor.fullname} />
-      ))} */}
     </ul>
   )
 }

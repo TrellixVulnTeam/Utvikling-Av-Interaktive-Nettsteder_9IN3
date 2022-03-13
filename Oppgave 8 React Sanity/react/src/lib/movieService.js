@@ -2,7 +2,7 @@ import client from './client'
 
 const movieFields = `
   title,
-  "slug": slug.current,
+  // "slug": slug.current,
   "actor": actor->fullname
 `
 
@@ -17,24 +17,37 @@ export const getMovies = async () => {
   return data
 }
 
-export const getMovie = async (slug) => {
-  const data = await client.fetch(
-    `*[_type == "movie" && slug.current == $slug]{${movieFields}}`,
-    { slug }
-  )
-  return data
-}
-
 // Funksjon for å hente alle skuespillere
 export const getActors = async () => {
   const data = await client.fetch(`*[_type == "actor"]{${actorFields}}`)
   return data
 }
 
-export const getActor = async (slug) => {
-  const data = await client.fetch(
-    `*[_type == "actor" && slug.current == $slug]{${actorFields}}`,
-    { slug }
+// Funksjon for å hente filmer med en gitt skuespillet
+export const getMovieActor = async (actorName) => {
+  const data = await client.fetch(`*[_type == "movie"]{${movieFields}}`)
+  const actorslug = await client.fetch(
+    `*[_type == "actor" && slug.current == $actorName]{${actorFields}}`,
+    {
+      actorName,
+    }
   )
-  return data
+  const newData = [...data, ...actorslug]
+  return newData
 }
+
+// export const getMovie = async (slug) => {
+//   const data = await client.fetch(
+//     `*[_type == "movie" && slug.current == $slug]{${movieFields}}`,
+//     { slug }
+//   )
+//   return data
+// }
+
+// export const getActor = async (slug) => {
+//   const data = await client.fetch(
+//     `*[_type == "actor" && slug.current == $slug]{${actorFields}}`,
+//     { slug }
+//   )
+//   return data
+// }
