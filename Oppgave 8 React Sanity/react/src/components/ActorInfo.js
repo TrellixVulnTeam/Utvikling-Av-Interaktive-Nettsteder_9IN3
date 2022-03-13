@@ -17,7 +17,7 @@ function ActorInfo() {
       const actormovies = movieActors.filter(
         (movie) => movie.actor === realactorname
       )
-      console.log(actormovies)
+      // console.log(actormovies)
       // Sorterer listen med filmer etter tittel på filemene
       setActor(actormovies.sort((a, b) => (a.title > b.title ? 1 : -1)))
     }
@@ -29,18 +29,18 @@ function ActorInfo() {
   return (
     <div>
       {actor?.map((movies, index) => (
-        <div key={index}>
+        <div key={index} className="actor-info">
           {(() => {
             if (index === 0) {
               return (
                 <>
                   <h2>{movies.actor}</h2>
-                  <h3>Movies:</h3>
+                  <p>Movies played in:</p>
                 </>
               )
             }
           })()}
-          <p>{movies.title}</p>
+          <li>{movies.title}</li>
         </div>
       ))}
     </div>

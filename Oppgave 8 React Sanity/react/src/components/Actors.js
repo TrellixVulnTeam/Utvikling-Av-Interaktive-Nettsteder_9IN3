@@ -21,7 +21,7 @@ function Actors() {
   return (
     <>
       {actors?.map((actor, index) => (
-        <div key={index}>
+        <div key={index} className="actor-info">
           <h2>{actor.fullname}</h2>
           <Link to={`/actors/${actor.slug}`}>Read More</Link>
         </div>
