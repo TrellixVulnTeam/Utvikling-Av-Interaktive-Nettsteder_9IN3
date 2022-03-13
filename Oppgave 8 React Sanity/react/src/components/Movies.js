@@ -6,20 +6,13 @@ function Movies() {
   const [movies, setMovies] = useState()
   const [actors, setActors] = useState()
 
-  // const url = 'https://jsonplaceholder.typicode.com/posts'
-  // useEffect(() => {
-  //   fetch(url)
-  //     .then((response) => response.json())
-  //     .then((data) => setMovies(data.splice(0, 10)))
-  //     .catch((error) => console.log(error))
-  // }, [])
-
   useEffect(() => {
     // Funksjon for å hente movie data
     const getMoviesData = async () => {
       const movies = await getMovies()
-      setMovies(movies)
-      console.log(JSON.stringify(movies))
+      // console.log(JSON.stringify(movies))
+      // Sorterer listen med filmer etter tittel på filemene
+      setMovies(movies.sort((a, b) => (a.title > b.title ? 1 : -1)))
     }
     // Kaller på getMoviesData funksjonen og tar med en .catch
     // for å fange opp eventuelle feil.
@@ -44,18 +37,12 @@ function Movies() {
 
   return (
     <ul>
-      {/* <button type="button" onClick={getActorsData}>
-        Hent Skuespillere
-      </button> */}
-      {/* <button type="button" onClick={getMoviesData}>
-        Hent Filmer
-      </button> */}
       {movies?.map((movie) => (
-        <Movie key={movie.slug} title={movie.title} />
+        <Movie key={movie.slug} title={movie.title} actor={movie.actor} />
       ))}
-      {actors?.map((actor) => (
+      {/* {actors?.map((actor) => (
         <Movie key={actor.slug} actor={actor.fullname} />
-      ))}
+      ))} */}
     </ul>
   )
 }
