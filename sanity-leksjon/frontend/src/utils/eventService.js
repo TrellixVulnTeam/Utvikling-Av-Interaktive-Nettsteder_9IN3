@@ -4,7 +4,8 @@ const eventFields = `
   title, 
   "slug": slug.current,
   preAmble,
-  "category": category->title
+  "category": category->title,
+  body[]{...}
 `
 
 export const getEvents = async () => {
@@ -17,5 +18,5 @@ export const getEvent = async (slug) => {
     `*[_type == "event" && slug.current == $slug]{${eventFields}}`,
     { slug }
   )
-  return data
+  return data?.[0]
 }

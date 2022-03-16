@@ -32,6 +32,11 @@ const event = {
       type: "reference",
       to: [{ type: "category" }],
     },
+    {
+      title: "Innhold",
+      name: "body",
+      type: "content",
+    },
   ],
   preview: {
     select: {

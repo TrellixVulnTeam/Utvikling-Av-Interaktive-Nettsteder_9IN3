@@ -1,25 +1,24 @@
-import { getEvent, getEvents } from './utils/eventService'
+import { Routes, Route } from 'react-router-dom'
+import Event from './pages/Event'
+import Events from './pages/Events'
+import Home from './pages/Home'
+import Navigation from './components/Navigation'
+import DefaultLayout from './layout/DefaultLayout'
 
 export default function App() {
-  const getEventsData = async () => {
-    const events = await getEvents()
-    console.log(JSON.stringify(events))
-  }
-
-  const getEventData = async () => {
-    const slug = 'event-1'
-    const event = await getEvent(slug)
-    console.log(JSON.stringify(event))
-  }
-
   return (
-    <main>
-      <button type="button" onClick={getEventsData}>
-        Hent Data
-      </button>
-      <button type="button" onClick={getEventData}>
-        Hent data om et event
-      </button>
-    </main>
+    <>
+      <Navigation />
+      <Routes>
+        <Route element={<DefaultLayout />}>
+          <Route index element={<Home />} />
+          <Route path="hjem" element={<Home />} />
+          <Route path="events">
+            <Route index element={<Events />} />
+            <Route path=":slug" element={<Event />} />
+          </Route>
+        </Route>
+      </Routes>
+    </>
   )
 }
