@@ -20,6 +20,20 @@ const movie = {
         maxLength: 96,
       },
     },
+    // Prøver å legge til flere skuespillere på hver film
+    // {
+    //   title: "Skuespillere",
+    //   name: "skuespillere",
+    //   type: "array",
+    //   of: [
+    //     {
+    //       title: "Skuespiller",
+    //       name: "actor",
+    //       type: "reference",
+    //       to: [{ type: "actor" }],
+    //     },
+    //   ],
+    // },
     {
       title: "Skuespiller",
       name: "actor",

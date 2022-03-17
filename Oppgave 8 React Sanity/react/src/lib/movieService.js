@@ -3,7 +3,8 @@ import client from './client'
 const movieFields = `
   title,
   // "slug": slug.current,
-  "actor": actor->fullname
+  "actor": actor->fullname,
+  // "skuespillere": skuespillere[]{...}
 `
 
 const actorFields = `
@@ -32,6 +33,8 @@ export const getMovieActor = async (actorName) => {
       actorName,
     }
   )
+  console.log(data)
+  console.log(actorslug)
   const newData = [...data, ...actorslug]
   return newData
 }

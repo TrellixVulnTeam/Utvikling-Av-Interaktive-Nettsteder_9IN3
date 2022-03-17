@@ -20,6 +20,24 @@ const actor = {
         maxLength: 96,
       },
     },
+    // {
+    //   title: "Movies",
+    //   name: "movies",
+    //   type: "array",
+    //   of: [
+    //     {
+    //       type: "object",
+    //       fields: [
+    //         {
+    //           title: "Movies",
+    //           name: "movies",
+    //           type: "reference",
+    //           to: [{ type: "movie" }],
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
   ],
 };
 

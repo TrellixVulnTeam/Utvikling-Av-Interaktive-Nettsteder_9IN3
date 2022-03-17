@@ -19,7 +19,7 @@ function Movies() {
 
     // Funksjon for å hente filmer fra en gitt skuespiller
     const getMovieActorData = async () => {
-      const movieActors = await getMovieActor('Robert Downey jr')
+      const movieActors = await getMovieActor()
       // console.log(JSON.stringify(movieActors))
     }
     // Kaller på getActorsData funksjonen og tar med en .catch
