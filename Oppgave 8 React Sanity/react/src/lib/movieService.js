@@ -12,6 +12,14 @@ const actorFields = `
   "slug": slug.current,
 `
 
+const actorMovieFields = `
+  fullname,
+  "slug": slug.current,
+  "relatedMovies": *[_type=='movie' && references(^._id)]{ 
+  	title,
+	}
+`
+
 // Funksjon for å hente alle filmer
 export const getMovies = async () => {
   const data = await client.fetch(`*[_type == "movie"]{${movieFields}}`)
@@ -24,7 +32,7 @@ export const getActors = async () => {
   return data
 }
 
-// Funksjon for å hente filmer med en gitt skuespillet
+// Funksjon for å hente filmer med en gitt skuespiller
 export const getMovieActor = async (actorName) => {
   const data = await client.fetch(`*[_type == "movie"]{${movieFields}}`)
   const actorslug = await client.fetch(
@@ -33,24 +41,17 @@ export const getMovieActor = async (actorName) => {
       actorName,
     }
   )
-  console.log(data)
-  console.log(actorslug)
+  // console.log(data)
+  // console.log(actorslug)
   const newData = [...data, ...actorslug]
   return newData
 }
 
-// export const getMovie = async (slug) => {
-//   const data = await client.fetch(
-//     `*[_type == "movie" && slug.current == $slug]{${movieFields}}`,
-//     { slug }
-//   )
-//   return data
-// }
-
-// export const getActor = async (slug) => {
-//   const data = await client.fetch(
-//     `*[_type == "actor" && slug.current == $slug]{${actorFields}}`,
-//     { slug }
-//   )
-//   return data
-// }
+// Funksjon for å hente filmer med en gitt skuespiller versjon 2
+export const getMovieActor2 = async (actorName) => {
+  const data = await client.fetch(
+    `*[_type=="actor" && slug.current == $actorName]{${actorMovieFields}}`,
+    { actorName }
+  )
+  return data[0]
+}
