@@ -53,5 +53,5 @@ export const getMovieActor2 = async (actorName) => {
     `*[_type=="actor" && slug.current == $actorName]{${actorMovieFields}}`,
     { actorName }
   )
-  return data[0]
+  return data?.[0]
 }
