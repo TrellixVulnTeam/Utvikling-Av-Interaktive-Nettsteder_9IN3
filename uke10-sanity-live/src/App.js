@@ -14,6 +14,8 @@ export default function App() {
     <Routes>
       {/* Gir konsistent Layout på alle ruter */}
       <Route element={<Layout />}>
+        {/* Hovedsiden viser Quizzes */}
+        <Route index element={<Quizzes />} />
         {/* /quiz */}
         <Route path="quiz">
           {/* /quiz */}

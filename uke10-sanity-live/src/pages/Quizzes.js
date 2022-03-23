@@ -32,9 +32,9 @@ function Quizzes() {
       setContent(data)
     }
     listQuizzes()
-  },[])
+  }, [])
 
-  if(loading) {
+  if (loading) {
     return <p>Henter data...</p>
   }
 
