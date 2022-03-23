@@ -15,8 +15,10 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/actors" element={<Actors />} />
-        <Route path="/actors/:actorname" element={<ActorInfo />} />
+        <Route path="actors">
+          <Route index element={<Actors />} />
+          <Route path=":actorname" element={<ActorInfo />} />
+        </Route>
       </Routes>
     </>
   )
