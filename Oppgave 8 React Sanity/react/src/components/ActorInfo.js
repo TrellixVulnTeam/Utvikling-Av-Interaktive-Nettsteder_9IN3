@@ -7,12 +7,13 @@ function ActorInfo() {
   const [actor, setActor] = useState()
   const [actor2, setActor2] = useState()
 
-  console.log(JSON.stringify(actor2))
+  // console.log(JSON.stringify(actor2))
 
   useEffect(() => {
     const getMovieActorData2 = async () => {
       const movieActors2 = await getMovieActor2(actorname)
-      // console.log(JSON.stringify(movieActors2.relatedMovies))
+      // console.log(JSON.stringify(movieActors2))
+      setActor(movieActors2.fullname)
       setActor2(movieActors2.relatedMovies)
     }
     getMovieActorData2().catch((error) => console.log(error))
@@ -45,7 +46,7 @@ function ActorInfo() {
             if (index === 0) {
               return (
                 <>
-                  <h2>{movies.actor}</h2>
+                  <h2>{actor}</h2>
                   <p>Movies played in:</p>
                 </>
               )
