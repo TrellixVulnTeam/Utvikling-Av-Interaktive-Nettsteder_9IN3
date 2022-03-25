@@ -21,9 +21,11 @@ function Actors() {
   return (
     <>
       {actors?.map((actor, index) => (
-        <div key={index} className="actor-info">
-          <h2>{actor.fullname}</h2>
-          <Link to={`/actors/${actor.slug}`}>Read More</Link>
+        <div key={index}>
+          <h2 className="text-xl font-semibold">{actor.fullname}</h2>
+          <p className="text-base text-blue-500 hover:text-red-500">
+            <Link to={`/actors/${actor.slug}`}>Read More</Link>
+          </p>
         </div>
       ))}
     </>

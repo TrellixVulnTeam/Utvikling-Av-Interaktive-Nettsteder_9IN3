@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Navigation() {
   // Stiling ved aktiv navigasjon
@@ -8,8 +8,8 @@ function Navigation() {
 
   return (
     <nav>
-      <ul>
-        <li>
+      <ul className="flex-rows mb-2 flex">
+        <li className="mr-3">
           <NavLink
             to="/"
             style={linkStyle}
@@ -18,7 +18,7 @@ function Navigation() {
             Hjem
           </NavLink>
         </li>
-        <li>
+        <li className="mr-3">
           <NavLink
             to="/movies"
             style={linkStyle}
@@ -27,7 +27,7 @@ function Navigation() {
             Movies
           </NavLink>
         </li>
-        <li>
+        <li className="mr-3">
           <NavLink
             to="/actors"
             style={linkStyle}

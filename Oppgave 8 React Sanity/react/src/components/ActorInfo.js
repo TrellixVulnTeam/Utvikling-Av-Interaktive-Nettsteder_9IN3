@@ -19,7 +19,7 @@ function ActorInfo() {
   return (
     <div>
       {relatedMovies?.map((movies, index) => (
-        <div key={index} className="actor-info">
+        <div key={index}>
           {(() => {
             if (index === 0) {
               return (
