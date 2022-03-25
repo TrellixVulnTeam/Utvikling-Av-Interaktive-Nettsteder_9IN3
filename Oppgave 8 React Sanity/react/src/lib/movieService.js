@@ -33,7 +33,7 @@ export const getActors = async () => {
 }
 
 // Funksjon for å hente filmer med en gitt skuespiller
-export const getMovieActor = async (actorName) => {
+export const getMovieActorOld = async (actorName) => {
   const data = await client.fetch(`*[_type == "movie"]{${movieFields}}`)
   const actorslug = await client.fetch(
     `*[_type == "actor" && slug.current == $actorName]{${actorFields}}`,
@@ -48,7 +48,7 @@ export const getMovieActor = async (actorName) => {
 }
 
 // Funksjon for å hente filmer med en gitt skuespiller versjon 2
-export const getMovieActor2 = async (actorName) => {
+export const getMovieActor = async (actorName) => {
   const data = await client.fetch(
     `*[_type=="actor" && slug.current == $actorName]{${actorMovieFields}}`,
     { actorName }
