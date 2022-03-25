@@ -41,8 +41,6 @@ export const getMovieActorOld = async (actorName) => {
       actorName,
     }
   )
-  // console.log(data)
-  // console.log(actorslug)
   const newData = [...data, ...actorslug]
   return newData
 }

@@ -30,27 +30,10 @@ function ActorInfo() {
               )
             }
           })()}
-          <li>{movies.title}</li>
+          <li>{movies?.title}</li>
         </div>
       ))}
     </div>
-    // <div>
-    //   {actor?.map((movies, index) => (
-    //     <div key={index} className="actor-info">
-    //       {(() => {
-    //         if (index === 0) {
-    //           return (
-    //             <>
-    //               <h2>{movies.actor}</h2>
-    //               <p>Movies played in:</p>
-    //             </>
-    //           )
-    //         }
-    //       })()}
-    //       <li>{movies.title}</li>
-    //     </div>
-    //   ))}
-    // </div>
   )
 }
 
