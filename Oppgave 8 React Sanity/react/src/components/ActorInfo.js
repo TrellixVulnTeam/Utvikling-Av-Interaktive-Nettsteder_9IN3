@@ -8,7 +8,7 @@ function ActorInfo() {
   const [actor2, setActor2] = useState()
 
   // console.log(JSON.stringify(actor2))
-
+  
   useEffect(() => {
     const getMovieActorData2 = async () => {
       const movieActors2 = await getMovieActor2(actorname)
@@ -77,3 +77,4 @@ function ActorInfo() {
 }
 
 export default ActorInfo
+
