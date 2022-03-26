@@ -34,7 +34,7 @@ function ActorInfo() {
             if (index === 0) {
               return (
                 <>
-                  <h2>{actor}</h2>
+                  <h2 className="text-xl font-semibold">{actor}</h2>
                   <p>Movies played in:</p>
                 </>
               )
