@@ -19,10 +19,10 @@ const checkNumberSeq = () => {
   const guess = getGuess();
   let isCorrect = numbers.sort().join("") === guess.join("");
   if (isCorrect) {
-      alert("Du sorterte riktig");
+    alert("Du sorterte riktig");
   }
   if (!isCorrect) {
-      alert('Du sorterte feil')
+    alert("Du sorterte feil");
   }
 };
 
@@ -38,7 +38,7 @@ const addNumbersUI = () => {
   // TODO: Bruk for-of (eller vanlig for-løkke) og numbersUl til å lage li-elementer med tallene som skal sorteres
   for (let value of numbers) {
     const li = value;
-    numbersUl.innerHTML += `<li>${li}</li>`
+    numbersUl.innerHTML += `<li>${li}</li>`;
   }
 };
 
