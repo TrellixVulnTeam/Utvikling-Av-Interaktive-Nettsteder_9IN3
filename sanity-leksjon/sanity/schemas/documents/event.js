@@ -27,6 +27,11 @@ const event = {
       description: "Dette er ingressen",
     },
     {
+      title: "Bilde",
+      name: "image",
+      type: "image",
+    },
+    {
       title: "Kategori",
       name: "category",
       type: "reference",

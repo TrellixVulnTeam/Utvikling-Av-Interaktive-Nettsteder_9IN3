@@ -4,6 +4,7 @@ import Events from './pages/Events'
 import Home from './pages/Home'
 import Navigation from './components/Navigation'
 import DefaultLayout from './layout/DefaultLayout'
+import Contact from './pages/Contact'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route index element={<Events />} />
             <Route path=":slug" element={<Event />} />
           </Route>
+          <Route path="kontakt" element={<Contact />} />
         </Route>
       </Routes>
     </>

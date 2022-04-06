@@ -34,6 +34,7 @@ function Event() {
     getEventsData()
   }, [slug])
 
+  console.log(JSON.stringify(event?.image))
   // Viser innholder under basert på om vi får feil eller henter data
   if (!event && error) return <div>Noe gikk galt ...</div>
   if (!event && loading) return <div>Henter data ... </div>
@@ -48,6 +49,12 @@ function Event() {
       </p>
       {/* Tittel */}
       <Title title={event?.title} />
+      {/* Bilde */}
+      <img
+        src={event?.image?.asset?.url}
+        className="w-3/6"
+        alt="Blackpink Kim Jennie"
+      />
       {/* Ingress */}
       <p className="my-2 text-sm italic">{event?.preAmble}</p>
       {/* Bruker sanity content for å vise innhold*/}

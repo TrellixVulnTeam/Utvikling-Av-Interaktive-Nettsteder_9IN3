@@ -4,6 +4,7 @@ const eventFields = `
   title, 
   "slug": slug.current,
   preAmble,
+  "image": image{alternativeText, caption, asset->{url}},
   "category": category->title,
   body[]{...}
 `
