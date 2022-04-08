@@ -1,0 +1,78 @@
+/* base */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+  text-align: center;
+}
+
+/* Form */
+#registerForm {
+  background-color: #564caf;
+  margin: 100px auto;
+  width: 70%;
+  padding: 40px;
+  min-width: 300px;
+  color: #ffffff
+}
+
+/* Input  */
+input {
+  padding: 10px;
+  display:block;
+  width: 100%;
+  font-size: 18px;
+  margin: 10px 0px;
+}
+input.invalid {
+  border-color: red;
+}
+
+/* Steps */
+.step {
+  display: none;
+}
+
+/* Buttons */
+.buttons {
+  text-align: left;
+}
+button {
+  background-color: #1e8ee9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+button:hover {
+  opacity: 0.5;
+}
+#prevBtn {
+  background-color: #bbb;
+}
+
+.indicators {
+  text-align: center;
+  margin-top: 70px;
+}
+.indicator {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+.indicator.active{
+  opacity: 1;
+}
+.indicator.finish {
+  background-color: #4de91e;
+}

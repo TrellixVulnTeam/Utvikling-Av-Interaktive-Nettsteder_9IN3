@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi Step Form</title>
+
+  <!-- Master Styles -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Form -->
+  <form id="registerForm">
+  <h1>Register</h1>
+
+  <div class="step">
+    Name:
+    <input type="text" placeholder="First Name" name="fname">
+    <input type="text" placeholder="Last Name" name="lname">
+  </div>
+
+  <div class="step">
+    Contact Info:
+    <input type="email" placeholder="Emal" name="email">
+    <input type="text" placeholder="Phone Number" name="phone">
+  </div>
+
+  <div class="step">
+    Login Info:
+    <input type="text" placeholder="Username" name="username">
+    <input type="password" placeholder="Password" name="password">
+  </div>
+
+  <!-- Buttons -->
+  <div class="buttons">
+    <button type="button" id="prevBtn" onClick="move(-1)">Previous</button>
+    <button type="button" id="nextBtn" onClick="move(1)">Next</button>
+  </div> <!-- End of Button -->
+
+  <!-- Indicators -->
+  <div class="indicators">
+    <span class="indicator"></span>
+    <span class="indicator"></span>
+    <span class="indicator"></span>
+  </div>
+
+  </form>   <!-- End of Form -->
+  
+  <!-- Stepper -->
+  <script src="./stepper.js"></script>
+</body>
+</html>
