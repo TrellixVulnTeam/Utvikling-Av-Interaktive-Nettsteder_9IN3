@@ -1,4 +1,4 @@
-function Search({ search, setSearch, handleSearch, handleInput }) {
+function Search({ handleSearch, handleInput }) {
   return (
     <form onSubmit={handleSearch}>
       <input onChange={handleInput} type="text" placeholder="Søk på en film" />
